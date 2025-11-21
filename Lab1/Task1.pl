@@ -29,13 +29,13 @@ owner_nonwhite(O, X):- owns(O, X), animal(X), not(white(X)).
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 Запросы:
 %Pовеp рыжая?
-red(rover).
+?– red(rover).
 
 %Опpеделить клички всех собак.
-dog(X).
+?– dog(X).
 
 %Опpеделить владельцев чего-либо
-owns(Owner,Smth).
+?– owns(Owner,Smth).
 
 %Опpеделить владельцев животных небелого цвета
-owner_nonwhite(Owner,_).
+?– owner_nonwhite(Owner,_).
