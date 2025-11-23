@@ -1,0 +1,49 @@
+male(tom).
+male(bob).
+male(pat).
+male(jim).
+
+female(pam).
+female(lis).
+female(ann).
+
+child(bob, pam).
+child(bob, tom).
+child(lis, tom).
+child(ann, bob).
+child(pat, bob).
+child(jim, pat).
+
+parent(Parent, Child) :- 
+    child(Child, Parent).
+
+parent_of_parent(Grandparent, Child) :-
+    parent(Grandparent, Parent),
+    parent(Parent, Child).
+
+ancestor(Ancestor, Descendant) :-
+    parent(Ancestor, Descendant).
+
+ancestor(Ancestor, Descendant) :-
+    parent(Parent, Descendant),
+    ancestor(Ancestor, Parent).
+
+mother(Mother, Child) :-
+    female(Mother),
+    parent(Mother, Child).
+
+%Кто pодитель Pat?
+?- parent(X, pat).
+
+%Есть ли у Lis pебенок?
+?- parent(lis, X).
+
+% Кто потомки Pat?
+?- ancestor(pat, X).
+
+%Является ли Pam матеpью Bob?
+?- mother(pam, bob).
+
+
+    
+    
