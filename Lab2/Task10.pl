@@ -1,3 +1,4 @@
+% Сортировка методом пузырька
 bubble_sort(List, Sorted) :-
     bubble_pass(List, List1), !,
     bubble_sort(List1, Sorted).
